@@ -1,11 +1,29 @@
 pipeline {
  
     agent any
+    
     stages {
          stage('Checkout Code') {
              steps {
                      checkout scm
                   }
               }
+          stage('Code Coverage') {
+            steps {
+              echo 'Deploying Pacakages'
+              script {
+              
+                 deploy_required_packages()
+              }
+            
+            }
+          
+          }
         }      
+   void deploy_required_packages() {
+      sh '''
+         echo 'starting the deployment'
+         echo $WORKSPACE
+      '''
+   }
 }    
