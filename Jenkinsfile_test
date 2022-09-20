@@ -23,13 +23,14 @@ pipeline {
     }    
    void deploy_required_packages() {
       sh '''
-         echo 'starting the deployment'
+         echo 'Deploying the pytest library'
          cd   $WORKSPACE
          echo $WORKSPACE
          python --version
          python3 -m venv test_env
          source test_env/bin/activate
          python --version
+         python3 -m pip install --upgrade pip
          pip install pytest-cov
          pip list
          pytest --cov=pyspark-demo --cov-report=xml
