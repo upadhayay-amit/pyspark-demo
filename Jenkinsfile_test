@@ -27,8 +27,10 @@ pipeline {
          cd   $WORKSPACE
          echo $WORKSPACE
          python --version
-         pip install pytest-cov
-         pytest --help
+         python3 -m venv test_env
+         source test_env/bin/activate
+         which python
+         
          
       '''
    }
