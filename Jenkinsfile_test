@@ -32,6 +32,7 @@ pipeline {
          python --version
          pip install pytest-cov
          pip list
+         pytest --cov=pyspark-demo .
          
          
       '''
