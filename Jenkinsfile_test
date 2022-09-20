@@ -29,7 +29,7 @@ pipeline {
          python --version
          python3 -m venv test_env
          source test_env/bin/activate
-         which python
+         python --version
          
          
       '''
