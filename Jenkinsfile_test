@@ -19,11 +19,11 @@ pipeline {
             }
           
           }
-        }      
+        }  
+    }    
    void deploy_required_packages() {
       sh '''
          echo 'starting the deployment'
          echo $WORKSPACE
       '''
    }
-}    
