@@ -32,7 +32,7 @@ pipeline {
          python --version
          pip install pytest-cov
          pip list
-         pytest --cov=pyspark-demo .
+         pytest --cov=pyspark-demo --cov-report=xml
          
          
       '''
