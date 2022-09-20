@@ -30,6 +30,8 @@ pipeline {
          python3 -m venv test_env
          source test_env/bin/activate
          python --version
+         pip install pytest-cov
+         pip list
          
          
       '''
