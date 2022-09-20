@@ -33,7 +33,7 @@ pipeline {
          python3 -m pip install --upgrade pip
          pip install pytest-cov
          pip list
-         pytest --cov test_with_pytest.py --cov-report=xml
+         pytest --cov test_with_pytest.py 
          
          
       '''
