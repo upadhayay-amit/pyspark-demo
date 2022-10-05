@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col,column,expr
+from pyspark.sql.functions import col,column,expr,lit
 
 spark = SparkSession.builder.appName("test").getOrCreate()
 
@@ -22,6 +22,9 @@ df.selectExpr("DEST_COUNTRY_NAME as destination").show(2)
 df.selectExpr("*", "(DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME) as same_country").show(5)
 df.selectExpr("*", "count > 10").show(5)
 
+# Adding a column to dataframe
+df.withColumn("withinCountry", expr("(DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME)")).show(5)
+df.withColumn("numberone", lit(1)).show(5)
 
 
 
